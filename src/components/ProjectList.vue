@@ -4,12 +4,22 @@
         data() {
             return {
                 arrProjects: [],
+                currentProject: 1,
             };
         },
+        methods: {
+            getProjects() {
+                axios
+                .get('http://localhost:8000/api/projects',{
+                    params: {
+                    page: this.currentProject,
+                    }
+                })
+                .then(response => (this.arrProjects = response.data.data));
+            },
+        },
         created() {
-            axios
-              .get('http://localhost:8000/api/projects')
-            .then(response => (this.arrProjects = response.data));
+            this.getProjects()
         },
     }
 
