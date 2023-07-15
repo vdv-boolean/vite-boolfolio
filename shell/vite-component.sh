@@ -1,6 +1,6 @@
 echo "<script>
     export default {
-
+        
     }
 
 </script>
@@ -16,14 +16,15 @@ echo "<script>
 </style>" > src/components/${1}.vue
 
 
-echo "Copiare nello script di App.vue (o nel genitore del nuovo componente):"
+echo "Copiare nello script di App.vue:"
 
-echo "import ${1}.vue from '.components/${1}.vue';
+echo "import ${1} from './components/${1}.vue';
+import ${1} from './${1}.vue'; // (o nel genitore del nuovo componente)
 
 export default {
     components: {
         ${1},
-    }
+    },
 };"
 
 echo "Copiare nel template di App.vue (o nel genitore del nuovo componente):"
