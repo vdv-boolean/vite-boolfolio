@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div>
-        <h1>ciao</h1>
+        <h1>Boolfolio</h1>
         <ProjectList />
     </div>
 
