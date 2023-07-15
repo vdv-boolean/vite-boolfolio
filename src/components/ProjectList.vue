@@ -1,11 +1,16 @@
 <script>
     import axios from 'axios';
+    import ProjectCard from './ProjectCard.vue';
+
     export default {
         data() {
             return {
                 arrProjects: [],
-                currentProject: 1,
+                currentProject: 2,
             };
+        },
+        components: {
+            ProjectCard
         },
         methods: {
             getProjects() {
@@ -27,11 +32,12 @@
 
 <template>
 
-<ul>
-    <li v-for="project in arrProjects" :key="project.id">
-        {{ project.title }}
-    </li>
-</ul>
+<ProjectCard 
+    v-for="project in arrProjects" 
+    :key="project.id"
+    :data="project"
+/>
+
 
 </template>
 
