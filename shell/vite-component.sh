@@ -16,7 +16,7 @@ echo "<script>
 </style>" > src/components/${1}.vue
 
 
-echo "Copiare nello script di App.vue:"
+echo "Copiare nello script di App.vue (o nel genitore del nuovo componente):"
 
 echo "import ${1}.vue from '.components/${1}.vue';
 
@@ -26,6 +26,6 @@ export default {
     }
 };"
 
-echo "Copiare nel template di App.vue:"
+echo "Copiare nel template di App.vue (o nel genitore del nuovo componente):"
 
 echo "<${1} />"
