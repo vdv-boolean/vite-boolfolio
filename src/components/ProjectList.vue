@@ -15,12 +15,12 @@
         methods: {
             getProjects() {
                 axios
-                .get('http://localhost:8000/api/projects',{
+                .get('http://localhost:8001/api/projects',{
                     params: {
                     page: this.currentProject,
                     }
                 })
-                .then(response => (this.arrProjects = response.data.data));
+                .then(response => (this.arrProjects = response.data));
             },
         },
         created() {
